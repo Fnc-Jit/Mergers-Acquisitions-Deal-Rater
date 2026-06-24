@@ -33,13 +33,13 @@ graph TD
     API -->|2. Check Symbol Cache| Cache[("Local JSON Cache")]
     Cache -->|Cache Miss| YF["yfinance Fallback Fetch"]
     API -->|3. Feature Engineering| FE["Preprocessing & Standard Scaling"]
-    FE -->|4. Predict Probability (P_raw)| XGB["XGBoost Classifier"]
-    FE -->|5. Local Attribution (S_i)| SHAP["SHAP TreeExplainer"]
+    FE -->|4. Predict Probability P_raw| XGB["XGBoost Classifier"]
+    FE -->|5. Local Attribution S_i| SHAP["SHAP TreeExplainer"]
     XGB -->|6. Additive Expert Overlays| Score["Adjusted Log-Odds & Score"]
-    SHAP -->|7. Additive Expert Overlays| SHAP_Adj["Adjusted SHAP Values (S'_i)"]
+    SHAP -->|7. Additive Expert Overlays| SHAP_Adj["Adjusted SHAP Values S_i"]
     Score -->|8. Return Unified JSON Response| UI
     SHAP_Adj -->|8. Return Unified JSON Response| UI
-    UI -->|9. Client-Side Rescaling (C_i)| Render["Waterfall & Gauge Render"]
+    UI -->|9. Client-Side Rescaling C_i| Render["Waterfall & Gauge Render"]
 ```
 
 ---
@@ -68,18 +68,18 @@ Prior to model inference, the raw input variables are transformed into engineere
 ### A. Relative Size ($S_{\text{relative}}$)
 The deal value relative to the acquirer's annual revenue. This serves as a proxy for integration complexity. Both variables are normalized to billions of USD:
 
-$$S_{\text{relative}} = \frac{V_{\text{deal\_billion}}}{R_{\text{acquirer\_billion}}}$$
+$$S_{\text{relative}} = \frac{V_{\text{deal}}}{R_{\text{acquirer}}}$$
 
 *Note: If the acquirer's revenue is $0$ (due to a data fetch error or pre-revenue status), it is replaced by $1.0$ to prevent division by zero.*
 
 ### B. Payment Structure One-Hot Encoding
 The categorical transaction structure is converted into three binary flags:
 
-$$X_{\text{payment\_cash}} = \begin{cases} 1 & \text{if payment\_type = "cash"} \\ 0 & \text{otherwise} \end{cases}$$
+$$X_{\text{cash}} = \begin{cases} 1 & \text{if payment structure is cash} \\ 0 & \text{otherwise} \end{cases}$$
 
-$$X_{\text{payment\_stock}} = \begin{cases} 1 & \text{if payment\_type = "stock"} \\ 0 & \text{otherwise} \end{cases}$$
+$$X_{\text{stock}} = \begin{cases} 1 & \text{if payment structure is stock} \\ 0 & \text{otherwise} \end{cases}$$
 
-$$X_{\text{payment\_mixed}} = \begin{cases} 1 & \text{if payment\_type = "mixed"} \\ 0 & \text{otherwise} \end{cases}$$
+$$X_{\text{mixed}} = \begin{cases} 1 & \text{if payment structure is mixed} \\ 0 & \text{otherwise} \end{cases}$$
 
 ### C. Standard Scaling ($X^{\text{scaled}}_j$)
 To ensure features are on a comparable scale for XGBoost and SHAP attribution, every numerical feature $X_j$ is scaled using the mean ($\mu_j$) and standard deviation ($\sigma_j$) computed from the training dataset:
@@ -169,7 +169,7 @@ Where:
 
 This yields:
 
-$$\text{size-adj} = -0.3 \cdot \left( \frac{V_{\text{deal\_billion}}}{R_{\text{acquirer\_billion}}} \right)$$
+$$\text{size-adj} = -0.3 \cdot \left( \frac{V_{\text{deal}}}{R_{\text{acquirer}}} \right)$$
 
 #### Visualizing the Size Penalty Curve
 
@@ -258,7 +258,7 @@ To ensure the explanations are **100% consistent** with our adjusted final score
 * **Adjusted Size SHAP**:
   $$S_{\text{relative-size}}' = S_{\text{relative-size}} + \text{size-adj}$$
 * **All Other Features**:
-  $$S_j' = S_j \quad (\forall j \neq \text{premium}, \text{relative\_size})$$
+  $$S_j' = S_j \quad (\forall j \neq \text{premium}, \text{relative-size})$$
 
 ### Mathematical Proof of Additive Consistency:
 We show that the sum of the adjusted SHAP values plus the base value is exactly equal to the final adjusted log-odds score:
@@ -333,7 +333,7 @@ graph TD
 ### A. Payment Type Similarity ($S_{\text{payment}}$)
 Measures the alignment of the transaction medium (Cash, Stock, or Mixed). normalizes and compares the categories:
 
-$$S_{\text{payment}} = \begin{cases} 25 & \text{if } \text{payment\_type}_{\text{current}} = \text{payment\_type}_{\text{historical}} \\ 0 & \text{otherwise} \end{cases}$$
+$$S_{\text{payment}} = \begin{cases} 25 & \text{if } \text{payment}_{\text{current}} = \text{payment}_{\text{historical}} \\ 0 & \text{otherwise} \end{cases}$$
 
 ### B. Deal Value Similarity ($S_{\text{value}}$)
 Calculates proximity in deal size. Let $V_c$ be the current deal value and $V_h$ be the historical deal value (both in millions of USD):
@@ -342,17 +342,17 @@ $$V_{\text{diff}} = |V_c - V_h|$$
 
 $$S_{\text{value}} = \max\left(0, 20 \times \left(1 - \frac{V_{\text{diff}}}{\max(V_c, V_h, 1)}\right)\right)$$
 
-### C. Premium Similarity ($S_{\text{premium\_sim}}$)
+### C. Premium Similarity ($S_{\text{premium-sim}}$)
 Calculates proximity in the acquisition premium percentage. Let $P_c$ be the current premium and $P_h$ be the historical premium:
 
 $$P_{\text{diff}} = |P_c - P_h|$$
 
-$$S_{\text{premium\_sim}} = \max\left(0, 20 \times \left(1 - \frac{P_{\text{diff}}}{100}\right)\right)$$
+$$S_{\text{premium-sim}} = \max\left(0, 20 \times \left(1 - \frac{P_{\text{diff}}}{100}\right)\right)$$
 
 ### D. Joint Similarity Score & Ranking
 The overall similarity score $S_{\text{total}}$ is the sum of the components:
 
-$$S_{\text{total}} = S_{\text{payment}} + S_{\text{value}} + S_{\text{premium\_sim}}$$
+$$S_{\text{total}} = S_{\text{payment}} + S_{\text{value}} + S_{\text{premium-sim}}$$
 
 The engine computes $S_{\text{total}}$ for all $N$ transactions in the database, sorts them in descending order of $S_{\text{total}}$, and returns the top 5 records:
 
