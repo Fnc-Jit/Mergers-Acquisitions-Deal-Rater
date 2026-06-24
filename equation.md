@@ -356,7 +356,7 @@ $$S_{\text{total}} = S_{\text{payment}} + S_{\text{value}} + S_{\text{premium-si
 
 The engine computes $S_{\text{total}}$ for all $N$ transactions in the database, sorts them in descending order of $S_{\text{total}}$, and returns the top 5 records:
 
-$$\text{Top Comparables} = \operatorname{arg\,max}_{i \in \{1,\dots,N\}}^{(5)} S_{\text{total}}(i)$$
+$$\text{Top Comparables} = \text{arg\,max}_{i \in \{1,\dots,N\}}^{(5)} S_{\text{total}}(i)$$
 
 ---
 
