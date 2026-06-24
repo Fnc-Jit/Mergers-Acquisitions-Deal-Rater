@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ma-deal-rater-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHONPATH
+        value: .
+      - key: FMP_API_KEY
+        sync: false
+      - key: SEC_USER_AGENT
+        value: "Jitraj Esh jitrajesh5@gmail.com"

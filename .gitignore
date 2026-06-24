@@ -1,0 +1,22 @@
+# User requested exclusions
+ma_deal_rater_buildplan.md
+.env
+backend/.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/data/cache/
+
+# Node/Vite
+node_modules/
+dist/
+.next/
+out/
+build/
+.pnpm-debug.log
+
+# OS
+.DS_Store

@@ -1,0 +1,71 @@
+acquirer,target,target_ticker,announcement_date,deal_value_billion,premium,payment_type,cross_border,same_industry,success,acquirer_sector,acquirer_industry,acquirer_country,acquirer_revenue,acquirer_ebitda,acquirer_operating_margin,acquirer_leverage,acquirer_car,target_car
+MSFT,Activision Blizzard,ATVI,2022-01-18,68.7,31.0,cash,0,1,1,Technology,Software - Infrastructure,United States,318272995328,184457003008.0,0.46326,0.25590787540851856,0.0,0.0
+AVGO,VMware,VMW,2022-05-26,61.0,34.0,mixed,0,1,1,Technology,Semiconductors,United States,75464998912,42083999744.0,0.48988,1.0759196582890276,0.0,0.0
+TSLA,Twitter,TWTR,2022-04-25,44.0,28.0,cash,0,0,1,Consumer Cyclical,Auto Manufacturers,United States,97878999040,11093999616.0,0.04203,-2.600775301126529,0.0,0.0
+ADBE,Figma,FGM,2022-09-15,20.0,13.0,mixed,0,1,0,Technology,Software - Application,United States,25198000128,9729000448.0,0.35327998,0.14914176720983538,0.0,0.0
+CVX,Hess,HES,2023-10-23,53.0,32.0,stock,0,1,1,Energy,Oil & Gas Integrated,United States,185740001280,37906001920.0,0.07312,1.0579063110014215,0.0,0.0
+XOM,Pioneer Natural Resources,PXD,2023-10-11,59.5,28.0,stock,0,1,1,Energy,Oil & Gas Integrated,United States,326008012800,56007000064.0,0.06355,0.7003767172527701,0.0,0.0
+PFE,Seagen,SGEN,2023-03-13,43.0,29.0,cash,0,1,1,Healthcare,Drug Manufacturers - General,United States,63315001344,25460000768.0,0.31617,2.0286724013346267,0.0,0.0
+AMGN,Horizon Therapeutics,HZNP,2022-12-12,27.8,23.0,cash,0,1,1,Healthcare,Drug Manufacturers - General,United States,37219999744,16917999616.0,0.33800998,2.6767349107380425,0.0,0.0
+LHX,Aerojet Rocketdyne,AJRD,2022-12-18,4.7,22.0,cash,0,1,1,Industrials,Aerospace & Defense,United States,12856000512,2146000000.0,0.097270004,3.226933890027959,0.0,0.0
+LMT,Aerojet Rocketdyne,AJRD,2020-12-20,4.4,13.0,cash,0,1,0,Industrials,Aerospace & Defense,United States,75106000896,7994999808.0,0.110039994,2.3518449515389905,0.0,0.0
+NVDA,ARM,ARM,2020-09-13,40.0,51.0,mixed,1,1,0,Technology,Semiconductors,United States,253491003392,165514002432.0,0.65596,-0.2438343463332097,0.0,0.0
+JBLU,Spirit Airlines,SAVE,2022-07-28,3.8,53.0,cash,0,1,0,Industrials,Airlines,United States,9162000384,245000000.0,-0.1,29.244896653061225,0.0,0.0
+ULCC,Spirit Airlines,SAVE,2022-02-07,2.9,53.0,mixed,0,1,0,Industrials,Airlines,United States,3804000000,-583000000.0,-0.33266,-7.677530017152659,0.0,0.0
+BMY,Celgene,CELG,2019-01-03,74.0,24.0,mixed,0,1,1,Healthcare,Drug Manufacturers - General,United States,48482000896,18973999104.0,0.33040002,1.8943291747295743,0.0,0.0
+ABBV,Allergan,AGN,2019-06-25,63.0,36.0,mixed,0,1,1,Healthcare,Drug Manufacturers - General,United States,62819000320,29915000832.0,0.32156,2.123382976879337,0.0,0.0
+OXY,Anadarko,APC,2019-04-12,57.0,28.0,mixed,0,1,1,Energy,Oil & Gas E&P,United States,21119000576,10826999808.0,0.17725,1.1822296557668879,0.0,0.0
+CRM,Slack,WORK,2020-12-01,27.7,35.0,mixed,0,1,1,Technology,Software - Application,United States,42829000704,12894999552.0,0.218,2.3816207915444836,0.0,0.0
+AMD,Xilinx,XLNX,2020-10-27,35.0,23.0,stock,0,1,1,Technology,Semiconductors,United States,37454000128,7430000128.0,0.14396,-1.1407805650040495,0.0,0.0
+ADI,Maxim Integrated,MXIM,2020-07-13,21.0,28.0,stock,0,1,1,Technology,Semiconductors,United States,12740193280,6149394944.0,0.38076,0.8569010278224862,0.0,0.0
+GILD,Immunomedics,IMMU,2020-09-13,21.0,25.0,cash,0,1,1,Healthcare,Drug Manufacturers - General,United States,29735999488,14737999872.0,0.39282,0.8384447873063464,0.0,0.0
+AZN,Alexion,ALXN,2020-12-12,39.0,27.0,mixed,1,1,1,Healthcare,Drug Manufacturers - General,United Kingdom,60438999040,20025999360.0,0.27943,1.315989300820591,0.0,0.0
+ORCL,Cerner,CERN,2021-12-20,28.3,38.0,cash,0,0,1,Technology,Software - Infrastructure,United States,67356999680,31737999360.0,0.36259,3.9162834006686427,0.0,0.0
+SPGI,IHS Markit,INFO,2020-11-30,44.0,21.0,stock,0,1,1,Financial Services,Financial Data & Stock Exchanges,United States,15729999872,7872999936.0,0.44282,1.5356281410237775,0.0,0.0
+CP,Kansas City Southern,KSU,2021-09-15,31.0,22.0,mixed,1,1,1,Industrials,Railroads,Canada,14983999488,8069000192.0,0.37557,2.9633163255723467,0.0,0.0
+CNI,Kansas City Southern,KSU,2021-05-21,33.6,57.0,mixed,1,1,0,Industrials,Railroads,Canada,17280000000,8999000064.0,0.38411,2.4536059814389617,0.0,0.0
+ZM,Five9,FIVN,2021-07-18,14.7,11.0,stock,0,1,0,Technology,Software - Application,United States,4933060096,1341010048.0,0.25058,-5.712681168515749,0.0,0.0
+DD,Rogers Corp,ROG,2021-11-02,5.2,57.0,cash,0,1,0,Basic Materials,Specialty Chemicals,United States,6918000128,1552999936.0,0.13801,1.6142949383869132,0.0,0.0
+WBA,Rite Aid,RAD,2015-10-27,17.0,7.0,cash,0,1,0,Technology,Software,US,10000000000,2500000000.0,0.25,2.0,0.0,0.0
+CI,Anthem,ANTM,2015-07-24,54.0,5.0,mixed,0,1,0,Healthcare,Healthcare Plans,United States,277892005888,13390000128.0,0.054780003,1.7212845624851065,0.0,0.0
+AET,Humana,HUM,2015-07-03,37.0,57.0,mixed,0,1,0,,,,10000000000,2500000000.0,0.25,2.0,0.0,0.0
+TMUS,Sprint,S,2018-04-29,26.0,27.0,stock,0,1,1,Communication Services,Telecom Services,United States,90529996800,33884999680.0,0.2401,3.5004870837289617,0.0,0.0
+DIS,21st Century Fox,FOX,2017-12-14,71.3,25.0,mixed,0,1,1,Communication Services,Entertainment,United States,97263001600,19719999488.0,0.15512,2.1133875437147274,0.0,0.0
+CMCSA,Sky,SKY,2018-09-22,39.0,33.0,cash,0,1,1,Communication Services,Telecom Services,United States,125277003776,35371999232.0,0.13145,2.407101613271911,0.0,0.0
+IBM,Red Hat,RHT,2018-10-28,34.0,34.0,cash,0,1,1,Technology,Information Technology Services,United States,68910997504,16611000320.0,0.13809,3.4928059239240326,0.0,0.0
+LHX,L3 Technologies,LLL,2018-10-14,35.0,33.0,stock,0,1,1,Industrials,Aerospace & Defense,United States,12856000512,2146000000.0,0.097270004,3.226933890027959,0.0,0.0
+RTX,United Technologies,UTX,2019-06-09,135.0,32.0,stock,0,1,1,Industrials,Aerospace & Defense,United States,90372997120,15262999552.0,0.13182001,2.1042390166218357,0.0,0.0
+FISV,First Data,FDC,2019-01-16,22.0,31.0,stock,0,1,1,,,,10000000000,2500000000.0,0.25,2.0,0.0,0.0
+FIS,Worldpay,WP,2019-03-18,43.0,37.0,mixed,0,1,1,Technology,Information Technology Services,United States,11440000000,3308000000.0,0.16388,6.164147327690447,0.0,0.0
+GPN,TSYS,TSS,2019-05-28,21.5,30.0,stock,0,1,1,Industrials,Specialty Business Services,United States,8855241728,3920230912.0,0.12515001,4.521656128403081,0.0,0.0
+SCHW,TD Ameritrade,AMTD,2019-11-25,26.0,24.0,stock,0,1,1,Financial Services,Capital Markets,United States,24803999744,6200999936.0,0.49352002,-5.969520766013438,0.0,0.0
+CNC,WellCare,WCG,2019-03-27,17.3,36.0,mixed,0,1,1,Healthcare,Healthcare Plans,United States,178331992064,2904999936.0,0.05069,-2.537004999094086,0.0,0.0
+TDOC,Livongo,LVGO,2020-08-05,18.5,33.0,mixed,0,1,1,Healthcare,Health Information Services,United States,2514452992,47510000.0,-0.079380006,6.0474005472532095,0.0,0.0
+INTU,Credit Karma,CK,2020-02-24,7.1,32.0,mixed,0,1,1,Technology,Software - Application,United States,20924999680,6409999872.0,0.46974,0.01872066932858747,0.0,0.0
+INTU,Mailchimp,MC,2021-09-13,12.0,40.0,mixed,0,1,1,Technology,Software - Application,United States,20924999680,6409999872.0,0.46974,0.01872066932858747,0.0,0.0
+SQ,Afterpay,APT,2021-08-01,29.0,29.0,stock,0,1,1,Technology,Software,US,10000000000,2500000000.0,0.25,2.0,0.0,0.0
+MRK,Acceleron,XLRN,2021-09-30,11.5,27.0,cash,0,1,1,Healthcare,Drug Manufacturers - General,United States,65768001536,29517000704.0,0.38604,1.470847258072417,0.0,0.0
+BAX,Hillrom,HRC,2021-09-02,12.4,29.0,cash,0,1,1,Healthcare,Medical Instruments & Supplies,United States,11320000512,1908999936.0,0.060349997,4.017810573672015,0.0,0.0
+PH,Meggitt,MGGT,2021-08-02,8.8,22.0,cash,0,1,1,Industrials,Specialty Industrial Machinery,United States,20987000832,5479000064.0,0.21528,1.6619821174727403,0.0,0.0
+EMR,National Instruments,NATI,2023-04-12,8.2,34.0,cash,0,1,1,Industrials,Specialty Industrial Machinery,United States,18315999232,5874999808.0,0.24244,2.0878298336788643,0.0,0.0
+CSCO,Splunk,SPLK,2023-09-21,28.0,31.0,cash,0,1,1,Technology,Communication Equipment,United States,60745998336,17006999552.0,0.24992001,0.9620157224074231,0.0,0.0
+JNJ,Abiomed,ABMD,2022-11-01,16.6,32.0,cash,0,1,1,Healthcare,Drug Manufacturers - General,United States,96361996288,34325000192.0,0.27408,0.9595339068250398,0.0,0.0
+HRB,Wave,WAVE,2019-06-11,0.4,29.0,cash,0,0,1,Consumer Cyclical,Personal Services,United States,3911534080,1022214976.0,0.43235,1.1335726546819835,0.0,0.0
+PYPL,Honey,HNY,2019-11-20,4.0,40.0,cash,0,0,1,Financial Services,Credit Services,United States,33734000640,6572000256.0,0.17969999,0.35422997524606303,0.0,0.0
+V,Plaid,PLD,2020-01-13,5.3,9.0,cash,0,0,0,Financial Services,Credit Services,United States,43027001344,30143000576.0,0.67346,0.33384199846422086,0.0,0.0
+MA,Finicity,FINI,2020-06-23,0.8,33.0,cash,0,0,1,Financial Services,Credit Services,United States,33938999296,21376999424.0,0.60836,0.5024558851763385,0.0,0.0
+UBER,Postmates,POST,2020-07-06,2.6,22.0,stock,0,1,1,Technology,Software - Application,United States,53687001088,7020000256.0,0.14565,0.9014245414865124,0.0,0.0
+GRAB,Altimeter,AGC,2021-04-13,39.6,31.0,stock,0,0,1,Technology,Software - Application,Singapore,3552000000,316000000.0,0.02723,-14.32594875949367,0.0,0.0
+SNPS,Ansys,ANSS,2024-01-16,35.0,29.0,mixed,0,1,1,Technology,Software - Infrastructure,United States,8679379968,1696253056.0,0.10383,4.927049299889368,0.0,0.0
+COF,Discover,DFS,2024-02-19,35.3,27.0,stock,0,1,1,Financial Services,Credit Services,United States,36310999040,9077749760.0,0.28586,-2.589959379536807,0.0,0.0
+HPE,Juniper Networks,JNPR,2024-01-09,14.0,35.0,cash,0,1,1,Technology,Communication Equipment,United States,38793998336,5631000064.0,0.087,2.843544676613948,0.0,0.0
+JNJ,Shockwave Medical,SWAV,2024-04-05,13.1,25.0,cash,0,1,1,Healthcare,Drug Manufacturers - General,United States,96361996288,34325000192.0,0.27408,0.9595339068250398,0.0,0.0
+HD,SRS Distribution,SRS,2024-03-28,18.2,22.0,cash,0,0,1,Consumer Cyclical,Home Improvement Retail,United States,166592004096,24945999872.0,0.11926,2.4905796391723802,0.0,0.0
+NVO,Catalent,CTLT,2024-02-05,16.5,35.0,cash,1,1,1,Healthcare,Drug Manufacturers - General,Denmark,327799996416,173876002816.0,0.61574,0.7174997967029411,0.0,0.0
+COHR,Lumentum,LITE,2021-03-25,7.0,5.0,mixed,0,1,0,Technology,Scientific & Technical Instruments,United States,6602083840,1313731968.0,0.13572,0.7622444946091165,0.0,0.0
+IIVI,Coherent,COHR,2021-03-25,7.0,38.0,mixed,0,1,1,Technology,Software,US,10000000000,2500000000.0,0.25,2.0,0.0,0.0
+SPG,Taubman Centers,TCO,2020-02-10,3.6,37.0,cash,0,1,1,Real Estate,REIT - Retail,United States,6648586240,4915057152.0,0.43376,5.787540804571299,0.0,0.0
+TIF,LVMH,LVMUY,2019-11-25,16.2,30.0,cash,1,1,1,Technology,Software,US,10000000000,2500000000.0,0.25,2.0,0.0,0.0
+TDOC,InTouch Health,INTC,2020-01-12,0.6,25.0,mixed,0,1,1,Healthcare,Health Information Services,United States,2514452992,47510000.0,-0.079380006,6.0474005472532095,0.0,0.0
+SYK,Wright Medical,WMGI,2019-11-04,4.7,30.0,cash,0,1,1,Healthcare,Medical Devices,United States,25269999616,6918000128.0,0.17824,1.7734894057521475,0.0,0.0
+MRK,Prometheus Biosciences,RXDX,2023-04-16,10.8,35.0,cash,0,1,1,Healthcare,Drug Manufacturers - General,United States,65768001536,29517000704.0,0.38604,1.470847258072417,0.0,0.0
