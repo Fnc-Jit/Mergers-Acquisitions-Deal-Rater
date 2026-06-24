@@ -39,10 +39,10 @@ Retrieve the top 5 most similar historical transactions from a live database of 
 
 ## The Mathematical & Rating Engine
 
-The rating engine combines the predictive power of an **XGBoost Classifier** with a custom **log-odds additive overlay** and a **client-side linear rescaler** to ensure 100% mathematical consistency and complete SHAP explainability.
+The rating engine combines the predictive power of an **XGBoost Classifier** with a custom **log-odds additive overlay** and a **client-side linear rescaler** to ensure 100% mathematical consistency, complete SHAP explainability, and robust historical comparables matching.
 
 > [!NOTE]
-> **Complete Derivations & Proofs**: The full mathematical foundations, step-by-step proofs of additive consistency, and the client-side linear rescaler formulas are documented in the dedicated [equation.md](file:///Users/jit/Documents/M&A%20Deal%20Rater/equation.md) file.
+> **Complete Derivations & Proofs**: The full mathematical foundations, step-by-step proofs of additive consistency, client-side linear rescaler formulas, similarity matching, and market-reaction outcomes are documented in the dedicated [equation.md](equation.md) file.
 
 ```mermaid
 graph TD
@@ -63,7 +63,7 @@ graph TD
 Machine learning models trained on small datasets are prone to step-function predictions (staying static over wide input ranges). To deliver a smooth, realistic rating, the engine layers expert business-logic overlays directly in **log-odds (logit) space** rather than probability space.
 
 > [!TIP]
-> For the complete derivation of the Gaussian overlay formulas, see [equation.md Section 2 (Continuous Expert Overlays)](file:///Users/jit/Documents/M&A%20Deal%20Rater/equation.md#2-continuous-expert-overlays-log-odds-space).
+> For the complete derivation of the Gaussian overlay formulas and custom visualization charts, see [equation.md Section 4 (Continuous Expert Overlays)](equation.md#4-continuous-expert-overlays-log-odds-space).
 
 1. **Gaussian Premium Sweet Spot Penalty**:
    M&A premiums have a non-linear relationship with success: too low and target shareholders reject; too high and the acquirer overpays. We model this as a smooth Gaussian penalty peaking at the optimal 30% premium:
@@ -88,7 +88,7 @@ This guarantees that the sum of the adjusted SHAP values plus the base value ($V
 $$V_{\text{base}} + \sum S_i' = Y_{\text{adjusted}}$$
 
 > [!TIP]
-> For the formal mathematical proof of this additive consistency, see [equation.md Section 4 (Additive SHAP Integration)](file:///Users/jit/Documents/M&A%20Deal%20Rater/equation.md#4-additive-shap-integration).
+> For the formal mathematical proof of this additive consistency, see [equation.md Section 6 (Additive SHAP Integration)](equation.md#6-additive-shap-integration--consistency-proof).
 
 ### C. Client-Side Linear SHAP-to-Probability Rescaler
 Since SHAP values are additive in log-odds space, rendering them in probability space ($0-100$) requires a linear transformation to preserve the exact relative proportions of the features' impacts:
@@ -102,7 +102,15 @@ Since SHAP values are additive in log-odds space, rendering them in probability 
    * **Proportional Integrity**: $\frac{C_a}{C_b} = \frac{S_a' \cdot K}{S_b' \cdot K} = \frac{S_a'}{S_b'}$. The relative impact size of the bars in the waterfall chart represents their true mathematical proportions.
 
 > [!TIP]
-> For the proofs of perfect summation and proportional integrity, see [equation.md Section 5 (Client-Side Rescaler)](file:///Users/jit/Documents/M&A%20Deal%20Rater/equation.md#5-client-side-linear-shap-to-probability-rescaler).
+> For the proofs of perfect summation and proportional integrity, see [equation.md Section 7 (Client-Side Rescaler)](equation.md#7-client-side-linear-shap-to-probability-rescaler).
+
+### D. Similarity Matching & Event-Study Outcome Labeling
+Beyond core scoring, the system integrates advanced quantitative finance and analytics modules:
+1. **Multi-Dimensional Similarity Engine**: Calculates a joint similarity score (out of 65 points) based on normalized payment structures, deal size proximity, and premium offered to fetch the top 5 historical comparables.
+2. **Cumulative Abnormal Return (CAR) Study**: Measures market reaction over a 3-day event window ($[-1, +1]$ days) relative to the S&P 500 to classify deal success.
+
+> [!TIP]
+> For the complete similarity formulas and CAR event-study outcome algorithms, see [equation.md Section 8 (Historical Comparables)](equation.md#8-historical-comparables-similarity-scoring-engine) and [Section 9 (Outcome Methodology)](equation.md#9-ma-deal-outcome--success-labeling-methodology).
 
 ---
 
